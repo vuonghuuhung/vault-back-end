@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { config } from './config/config';
 import { CatsModule } from './cats/cats.module';
 import { VaultsModule } from './vaults/vaults.module';
+import { Web3Service } from './web3/web3.service';
 
 @Module({
   imports: [
@@ -23,6 +24,6 @@ import { VaultsModule } from './vaults/vaults.module';
     VaultsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, Web3Service],
 })
 export class AppModule {}
