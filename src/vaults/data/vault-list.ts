@@ -353,7 +353,7 @@ export const VAULTS = [
     tags: ['LP'],
     tokenAddress: '0xc83cE8612164eF7A13d17DDea4271DD8e8EEbE5d',
     decimals: '18',
-    vaultAddress: '0x81a276Cc1323A76ad0C71657139e6bCdC3C52b30',
+    vaultAddress: '0xcF2c275b0533DCEe44b0dD752C26169fa3d36E31',
     strategyAddress: '0xcF2c275b0533DCEe44b0dD752C26169fa3d36E31',
     cmcRewardTokenSymbols: ['iFARM', 'YEL', 'ETH'],
     // pricePerFullShare: '2712384482679267701',
