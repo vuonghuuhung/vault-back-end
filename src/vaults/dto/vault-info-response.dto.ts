@@ -27,11 +27,13 @@ export class VaultInfoResponseDto {
   uniswapV3ManagedData: string | null;
   inactive: boolean;
   rewardPool: string;
+  underlyingGeckoId: string;
   depositToken: {
     name: string;
     address: string;
     decimal: number;
     usdPrice: string;
+    imgUrl: string | null;
   };
   description: string;
 }
