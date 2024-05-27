@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { config } from './config/config';
 import { CatsModule } from './cats/cats.module';
 import { VaultsModule } from './vaults/vaults.module';
+import { TxHistoryModule } from './tx-history/tx-history.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { VaultsModule } from './vaults/vaults.module';
     }),
     CatsModule,
     VaultsModule,
+    TxHistoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

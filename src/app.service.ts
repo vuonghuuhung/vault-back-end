@@ -1,7 +1,22 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import { InjectConnection } from '@nestjs/mongoose';
+import { Connection } from 'mongoose';
 
 @Injectable()
-export class AppService {
+export class AppService implements OnModuleInit {
+  constructor(@InjectConnection() private readonly connection: Connection) {}
+
+  async onModuleInit() {
+    await this.clearDatabase();
+  }
+
+  private async clearDatabase() {
+    const collections = await this.connection.db.listCollections().toArray();
+    for (const collection of collections) {
+      await this.connection.db.collection(collection.name).drop();
+    }
+  }
+
   getHello(): string {
     return `
       <!DOCTYPE html>
