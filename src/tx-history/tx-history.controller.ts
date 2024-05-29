@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Query,
+} from '@nestjs/common';
 import { TxHistoryService } from './tx-history.service';
 import { CreateTxHistoryDto } from './dto/create-tx-history.dto';
 import { TxHistory } from './entities/tx-history.entity';
@@ -13,8 +21,11 @@ export class TxHistoryController {
   }
 
   @Get()
-  async findAll(): Promise<TxHistory[]> {
-    return this.txHistoryService.findAll();
+  async findAll(
+    @Query('vaullt') vault: string,
+    @Query('address') address: string,
+  ): Promise<TxHistory[]> {
+    return this.txHistoryService.findAll(vault, address);
   }
 
   @Get(':id')

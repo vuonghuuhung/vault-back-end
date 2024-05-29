@@ -113,8 +113,20 @@ export class TxHistoryService {
     return createdTxHistory;
   }
 
-  async findAll(): Promise<TxHistory[]> {
-    return this.txHistoryModel.find().exec();
+  async findAll(vault: string, address: string): Promise<TxHistory[]> {
+    // get the tx history from the database has from = address and to = vault
+    try {
+      const txHistories = await this.txHistoryModel
+        .find({
+          from: address,
+          to: vault,
+        })
+        .exec();
+      return txHistories;
+    } catch (error) {
+      this.logger.error(error);
+      return [];
+    }
   }
 
   findOne(id: number) {
