@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { VaultsService } from './vaults.service';
-import { VaultsController } from './vaults.controller';
+import { CronjobsService } from './cronjobs.service';
+import { CronjobsController } from './cronjobs.controller';
 import { SharePriceCrawlerService } from 'src/share-price-crawler/share-price-crawler.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import {
@@ -14,8 +14,7 @@ import {
       { name: SharePriceCrawler.name, schema: SharePriceCrawlerSchema },
     ]),
   ],
-  controllers: [VaultsController],
-  providers: [VaultsService, SharePriceCrawlerService],
-  exports: [VaultsService],
+  controllers: [CronjobsController],
+  providers: [CronjobsService, SharePriceCrawlerService],
 })
-export class VaultsModule {}
+export class CronjobsModule {}

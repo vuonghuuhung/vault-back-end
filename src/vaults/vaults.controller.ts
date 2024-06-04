@@ -8,12 +8,12 @@ export class VaultsController {
   constructor(private readonly vaultsService: VaultsService) {}
 
   @Get()
-  findAll() {
-    return this.vaultsService.findAll();
+  async findAll() {
+    return await this.vaultsService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.vaultsService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    return await this.vaultsService.findOne(id);
   }
 }

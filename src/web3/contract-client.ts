@@ -16,7 +16,7 @@ export class ContractClient {
   static getReader() {
     if (!this.reader) {
       this.reader = Reader__factory.connect(
-        '0x26Df0Ea798971A97Ae121514B32999DfDb220e1f', // hardcode for local eviroment
+        '0xA3b48c7b901fede641B596A4C10a4630052449A6',
         this.getProvider(),
       );
     }

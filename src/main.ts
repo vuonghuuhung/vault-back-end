@@ -12,8 +12,8 @@ async function bootstrap() {
   const port = configService.get<number>('port');
 
   const config = new DocumentBuilder()
-    .setTitle('Cats example')
-    .setDescription('The cats API description')
+    .setTitle('Vaults Backend API')
+    .setDescription('Vault Backend API')
     .setVersion('1.0')
     .addTag('cats')
     .build();
