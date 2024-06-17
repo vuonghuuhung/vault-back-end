@@ -182,6 +182,7 @@ export class TxHistoryService {
       //
       const strategyAbi = BaseUpgradeableStrategy__factory.createInterface();
       const allLogs = txReceipt.logs.map((log) => strategyAbi.parseLog(log));
+      // console.log({ allLogs });
       const platformFeeLog = allLogs.filter((log) => {
         if (log) {
           return log.name === 'PlatformFeeLogInReward';
